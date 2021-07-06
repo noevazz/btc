@@ -18,3 +18,9 @@ class FieldElement:
 		if other == None:
 			raise ValueError(f"Cannot compare {other} with FiniteField")
 		return self.num != other.num or self.prime != other.prime
+	
+	def __add__(self, other):
+		if self.prime != other.prime:
+			raise TypeError('Cannot add two numbers in different Fields')
+		num = (self.num + other.num) % self.prime
+		return self.__class__(num, self.prime)
