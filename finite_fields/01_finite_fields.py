@@ -1,7 +1,7 @@
 class FieldElement:
 	def __init__(self, num: int, prime: int):
 		if num>=prime or num<0:
-			error = f"Num {num} not in the field range 0 to {prime}"
+			error = f"Num {num} not in the field range 0 to {prime-1}"
 			raise ValueError(error)
 		self.num = num
 		self.prime = prime
